@@ -41,7 +41,8 @@
 </template>
 
 <script>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
+
 const focus = {
     inserted: (el) => {
       el.focus()
@@ -53,6 +54,10 @@ export default {
         focus
     },
     setup() {
+
+      onMounted(() => {
+          console.log('Foi montado composition API')
+      })
 
       const data = reactive({
            name: 'Enzo',
